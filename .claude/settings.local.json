@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(curl:*)",
+      "Bash(conda activate:*)",
+      "Bash(python:*)",
+      "Bash(pip install:*)",
+      "Bash(call activate yolo_wd)",
+      "Bash(C:UsersRyananaconda3Scriptsactivate.bat yolo_wd)",
+      "Bash(where conda)",
+      "Bash(C:UsersRyananaconda3Scriptsconda.exe run -n yolo_wd python demo/gradio_demo.py)",
+      "Bash(conda run:*)",
+      "Bash(nvidia-smi:*)",
+      "Bash(wmic:*)",
+      "WebSearch",
+      "Bash(set PYTHONPATH=%cd%)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

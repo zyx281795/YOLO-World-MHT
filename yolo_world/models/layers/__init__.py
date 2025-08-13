@@ -10,9 +10,30 @@ from .yolo_bricks import (
     RepMaxSigmoidCSPLayerWithTwoConv
     )
 
+# YOLOv11 Components
+from .yolov11_blocks import (
+    YOLOv11Conv,
+    YOLOv11Bottleneck,
+    C3k,
+    C3k2,
+    PSABlock,
+    MultiHeadAttention,
+    C2PSA,
+    SPPF
+)
+
 __all__ = ['CSPLayerWithTwoConv',
            'MaxSigmoidAttnBlock',
            'MaxSigmoidCSPLayerWithTwoConv',
            'RepConvMaxSigmoidCSPLayerWithTwoConv',
            'RepMaxSigmoidCSPLayerWithTwoConv',
-           'ImagePoolingAttentionModule']
+           'ImagePoolingAttentionModule',
+           # YOLOv11 Components
+           'YOLOv11Conv',
+           'YOLOv11Bottleneck', 
+           'C3k',
+           'C3k2',
+           'PSABlock',
+           'MultiHeadAttention',
+           'C2PSA',
+           'SPPF']

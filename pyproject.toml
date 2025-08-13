@@ -29,20 +29,18 @@ requires-python = ">= 3.7"
 
 dependencies = [
     "wheel",
-    "torch>=1.11.0",
-    "torchvision>=0.16.2",
-    "transformers",
+    "torch==2.0.0",
+    "torchvision==0.15.1",
+    "transformers==4.33.0",
     "tokenizers",
     "numpy",
     "opencv-python",
     "supervision==0.19.0",
+    "mmdet==3.3.0",
+    "mmengine==0.10.6",
     "openmim",
-    "mmcv-lite>=2.0.0rc4",
-    "mmdet==3.0.0",
-    "mmengine>=0.7.1",
-    "openmim",
-    "mmcv",
-    'mmyolo @ git+https://github.com/onuralpszr/mmyolo.git',
+    "mmcv==2.0.0",
+    #'mmyolo @ git+https://github.com/onuralpszr/mmyolo.git',
 
 ]
 
