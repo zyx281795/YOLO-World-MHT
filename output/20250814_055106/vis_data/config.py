@@ -333,7 +333,7 @@ last_transform = [
         ),
         type='mmdet.PackDetInputs'),
 ]
-load_from = 'checkpoints/yolo_world_l_stage1.pth'
+load_from = 'checkpoints/x_stage1-62b674ad.pth'
 log_level = 'INFO'
 log_processor = dict(by_epoch=True, type='LogProcessor', window_size=50)
 loss_bbox_weight = 7.5

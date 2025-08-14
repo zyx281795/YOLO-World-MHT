@@ -6,7 +6,11 @@ import torch
 from mmengine.config import Config
 from mmengine.dataset import Compose
 from mmdet.apis import init_detector
+from mmengine.registry import MODELS
 from mmdet.utils import get_test_pipeline_cfg
+
+# Import YOLO-World modules
+import yolo_world
 
 
 def inference(model, image, texts, test_pipeline, score_thr=0.3, max_dets=100):
@@ -37,13 +41,15 @@ def inference(model, image, texts, test_pipeline, score_thr=0.3, max_dets=100):
 if __name__ == "__main__":
 
     config_file = "configs/pretrain/yolo_world_v2_x_vlpan_bn_2e-3_100e_4x8gpus_obj365v1_goldg_train_1280ft_lvis_minival.py"
-    checkpoint = "weights/yolo_world_v2_x_obj365v1_goldg_cc3mlite_pretrain_1280ft-14996a36.pth"
+    checkpoint = "checkpoints/yolo_world_v2_x_obj365v1_goldg_cc3mlite_pretrain_1280ft-14996a36.pth"
 
     cfg = Config.fromfile(config_file)
     cfg.work_dir = osp.join('./work_dirs')
     # init model
     cfg.load_from = checkpoint
-    model = init_detector(cfg, checkpoint=checkpoint, device='cuda:0')
+    model = MODELS.build(cfg.model)
+    model.load_state_dict(torch.load(checkpoint, map_location='cuda:0')['state_dict'], strict=False)
+    model = model.cuda().eval()
     test_pipeline_cfg = get_test_pipeline_cfg(cfg=cfg)
     test_pipeline_cfg[0].type = 'mmdet.LoadImageFromNDArray'
     test_pipeline = Compose(test_pipeline_cfg)

@@ -220,7 +220,7 @@ def demo(runner, args):
                      [out_download, out_download])
 
         demo.launch(server_name='0.0.0.0',
-                    server_port=8080)  # port 80 does not work for me
+                    server_port=8081)  # port 80 does not work for me
 
 
 if __name__ == '__main__':

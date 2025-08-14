@@ -14,7 +14,15 @@
       "Bash(nvidia-smi:*)",
       "Bash(wmic:*)",
       "WebSearch",
-      "Bash(set PYTHONPATH=%cd%)"
+      "Bash(set PYTHONPATH=%cd%)",
+      "Bash(set GRADIO_SERVER_PORT=8081)",
+      "Bash(taskkill:*)",
+      "Bash(cmd /c taskkill:*)",
+      "Bash(set PYTHONPATH=C:UsersRyanOneDrive - 中山醫學大學桌面YOLO-World-MHT)",
+      "Bash(set PYTHONIOENCODING=utf-8)",
+      "Bash(C:UsersRyananaconda3Scriptsconda.exe run -n yolo_wd python demo_yolov11_weights.py)",
+      "Bash(set GRADIO_SERVER_PORT=8084)",
+      "Bash(C:UsersRyananaconda3Scriptsconda.exe run -n yolo_wd python simple_test.py)"
     ],
     "deny": [],
     "ask": []
