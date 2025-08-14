@@ -249,6 +249,15 @@ See [`demo`](./demo) for more details
 - [x] `inference.ipynb`: jupyter notebook for YOLO-World.
 - [x] [Google Colab Notebook](https://colab.research.google.com/drive/1F_7S5lSaFM06irBCZqjhbN7MpUXo6WwO?usp=sharing): We sincerely thank [Onuralp](https://github.com/onuralpszr) for sharing the [Colab Demo](https://colab.research.google.com/drive/1F_7S5lSaFM06irBCZqjhbN7MpUXo6WwO?usp=sharing), you can have a try 😊！
 
+## bash執行指令:
+#### YOLOv8:
+python demo/gradio_demo.py configs/pretrain/yolo_world_v2_x_vlpan_bn_2e-3_100e_4x8gpus_obj365v1_goldg_train_1280ft_lvis_minival.py checkpoints/yolo_world_v2_x_obj365v1_goldg_cc3mlite_pretrain_1280ft-14996a36.pth
+#### YOLOv8架構 + YOLOv11組件支援:
+###### (混合架構:整體網路骨架仍是 YOLOv8，並加入 YOLOv11 的C3k2 blocks、C2PSA attention、SPPF blocks和YOLOv11Conv改良元件)
+python demo/gradio_demo_with_yolov11.py configs/pretrain/yolo_world_v2_x_vlpan_bn_2e-3_100e_4x8gpus_obj365v1_goldg_train_1280ft_lvis_minival.py checkpoints/yolo_world_v2_x_obj365v1_goldg_cc3mlite_pretrain_1280ft-14996a36.pth
+#### YOLOv11:
+python demo/gradio_demo.py configs/pretrain/yolo_world_v2_x_vlpan_bn_2e-3_100e_4x8gpus_obj365v1_goldg_train_1280ft_lvis_minival.py checkpoints/yolo_world_yolov11n_converted.pth
+
 ## Acknowledgement
 
 We sincerely thank [mmyolo](https://github.com/open-mmlab/mmyolo), [mmdetection](https://github.com/open-mmlab/mmdetection), [GLIP](https://github.com/microsoft/GLIP), and [transformers](https://github.com/huggingface/transformers) for providing their wonderful code to the community!
